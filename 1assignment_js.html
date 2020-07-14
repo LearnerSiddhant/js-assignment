@@ -1,0 +1,49 @@
+<html>
+<head>
+    <title>Assignment#1 for Javascript</title>
+</head>
+<body>
+    <script>
+        
+        var day = new Date();
+        var today = day.getDay();
+        var days = ["Sunday", "Monday", "Tuesday", "Wednesday ", "Thursday", "Friday", "Saturday"];
+        document.write("Today is : " + days[today] + ".");
+
+        var hour = day.getHours();
+        var minute = day.getMinutes();
+        var second = day.getSeconds();
+        var timing = (hour >= 12) ? " PM " : " AM ";
+        hour = (hour >= 12) ? hour - 12 : hour;
+        if (hour === 0 && timing === ' PM ') 
+        {
+            if (minute === 0 && second === 0) 
+            {
+                hour = 12;
+                timing = ' Noon';
+            }
+            else 
+            {
+                hour = 12;
+                timing = ' PM';
+            }
+        }
+        if (hour === 0 && timing === ' AM ') 
+        {
+            if (minute === 0 && second === 0) 
+            {
+                hour = 12;
+                timing = ' Midnight';
+            }
+            else 
+            {
+                hour = 12;
+                timing = ' AM';
+            }
+        }
+        document.write("<br>"); // for new line
+        document.write("Current Time is : " + hour + timing + " : " + minute + " : " + second);
+    </script>
+</body>
+
+</html>
